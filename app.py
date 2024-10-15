@@ -34,13 +34,22 @@ period = n_years * TRADING_DAYS_CRYPTO
 
 df_train = data[["Date", "Close"]]
 df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
-model = Prophet()
-model.fit(df_train)
-future = model.make_future_dataframe(periods=period)
-forecast = model.predict(future)
+
+
+@st.cache_data
+def get_forecast(df_train):
+    model = Prophet()
+    model.fit(df_train)
+    future = model.make_future_dataframe(periods=period)
+    forecast = model.predict(future)
+    return forecast, model
+
+
+forecast, model = get_forecast(df_train)
 
 st.subheader("Forecast data")
 st.write(forecast.tail())
+
 st.write("Forecast Timeseries")
 fig1 = plot_plotly(model, forecast)
 st.plotly_chart(fig1)
