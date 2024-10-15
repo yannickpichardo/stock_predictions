@@ -3,7 +3,6 @@ from datetime import date
 import yfinance as yf
 from prophet import Prophet
 import plotly.graph_objects as go
-from prophet.plot import plot_plotly
 import pandas as pd
 
 START = "2015-01-01"
