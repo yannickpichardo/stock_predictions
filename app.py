@@ -54,6 +54,7 @@ st.write(forecast.tail())
 
 st.write("Forecast Timeseries")
 fig1 = plot_plotly(model, forecast)
+fig1.layout.update(title_text="Forecast data", xaxis_rangeslider_visible=True)
 st.plotly_chart(fig1)
 
 st.subheader("Raw data")
