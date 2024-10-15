@@ -10,7 +10,7 @@ TODAY = date.today().strftime("%Y-%m-%d")
 TRADING_DAYS = 255
 st.title("Stock Prediction App")
 
-stocks = ("AAPL", "GOOG", "AMZN", "NKE")
+stocks = ("AAPL", "GOOG", "AMZN", "NKE", "BTC-USD")
 selected_stock = st.selectbox("Select stock", stocks)
 
 
