@@ -8,7 +8,9 @@ from prophet.plot import plot_plotly
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 TRADING_DAYS_CRYPTO = 365
+st.set_page_config(layout="wide", page_title="Crypto Predictions", page_icon="📈")
 st.title("Crypto Prediction Dashboard")
+
 
 stocks = (
     "BTC-USD",
